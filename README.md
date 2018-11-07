@@ -10,11 +10,8 @@ Basic Observable Pattern in Unity
 #### Bind Data to a callback
         model.dataUpdated += (T obj) =>
         {
-          
-            //Ugly type casting because of how c# handles
-            T newT1 = (T)(object)obj;
+            //Ugly type casting, know a better way to do this?
             Texture2D newT2 = (Texture2D)(object)newT1;
-
             Image.sprite = Sprite.Create(newT2, new Rect(0.0f, 0.0f, newT2.width, newT2.height), new Vector2(0.5f, 0.5f), 100.0f);
         };
 #### Update data in Observer to trigger callback
